@@ -1,4 +1,4 @@
-const mapbox = require("mapbox-gl");
+const mapboxgl = require("mapbox-gl");
 
 const iconURLs = {
     hotels: "http://i.imgur.com/D9574Cu.png",
@@ -8,16 +8,22 @@ const iconURLs = {
 
 const buildMarker = (type, coords) => {
     const markerDomEl = document.createElement("div");
+    markerDomEl.style.width = "32px";
+    markerDomEl.style.height = "39px";
 
     if (type === 'hotel') {
-        markerDomEl.style.backgroundImage = iconURLs.hotels;
+        markerDomEl.style.backgroundImage = `url(${iconURLs.hotels})`;
     }
     if (type === 'restaurant') {
-        markerDomEl.style.backgroundImage = iconURLs.restaurants;
+        markerDomEl.style.backgroundImage = `url(${iconURLs.restaurants})`;
     }
-    if (type === 'activity') {
-        markerDomEl.style.backgroundImage = iconURLs.activity;
+    if (type === 'activities') {
+        markerDomEl.style.backgroundImage = `url(${iconURLs.activities})`;
     }
+    return new mapboxgl.Marker(markerDomEl).setLngLat(coords);
 };
 
-module.exports = buildMarker;
+module.exports = { iconURLs, buildMarker };
+
+
+// new mapboxgl.Marker(markerDomEl).setLngLat([-74.009, 40.705]).addTo(map);

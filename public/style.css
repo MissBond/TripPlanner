@@ -8,6 +8,17 @@ body {
   background-color: #C1B5AD;
 }
 
+header {
+  background-color: #ffffff;
+  display: flex;
+  height: 50px;
+
+}
+
+.container {
+  flex-grow: 3;
+}
+
 #map {
   height: 100vh;
   width: 100vw;
