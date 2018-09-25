@@ -1,4 +1,5 @@
 const mapboxgl = require("mapbox-gl");
+const marker = require('./marker.js')
 
 mapboxgl.accessToken = "pk.eyJ1IjoiZGJvbmQ2MDMiLCJhIjoiY2ptaTU0dmQ2MDFjcDNybndpNzYwZzJjdSJ9.OpsMjANYYMxUK6OVA13OZw";
 
